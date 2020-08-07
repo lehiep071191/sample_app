@@ -34,22 +34,3 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 #
 # preload_app!
 # Puma configuration file.
-max_threads_count = ENV.fetch("RAILS_MAX_THREADS") {
-min_threads_count = ENV.fetch("RAILS_MIN_THREADS") {
-threads min_threads_count, max_threads_count
-port
-ENV.fetch("PORT") { 3000 }
-environment ENV.fetch("RAILS_ENV") { ENV['RACK_ENV']
-pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid"
-
-5 }
-max_threads_count }
-|| "production" }
-}
-workers ENV.fetch("WEB_CONCURRENCY") { 2 }
-preload_app!
-plugin :tmp_restart
-web: bundle exec puma -C config/puma.rb
-
-# Allow puma to be restarted by `rails restart` command.
-plugin :tmp_restart
