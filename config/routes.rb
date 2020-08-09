@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get '/help' , to: 'static_pages#help'  
   get '/about', to: 'static_pages#about'
   get'/login', to: 'sessions#new'
-  get 'static_pages/home'
-  get 'static_pages/help'
   root 'static_pages#home'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
